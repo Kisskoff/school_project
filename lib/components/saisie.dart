@@ -1,0 +1,183 @@
+import 'package:flutter/material.dart';
+import 'package:school_project/constant/colors.dart';
+
+//
+Widget saisie({
+  final title,
+  String? hint,
+  TextEditingController? controller,
+  int? maxlines = 1,
+  bool obscur = false,
+  final keybord,
+  IconData? iconPrefix,
+  int? length = 4,
+}) {
+  return Column(
+    children: [
+      Container(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        height: 55,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          border: Border.all(
+            color: primary,
+            width: 1.0,
+            style: BorderStyle.solid,
+          ),
+        ),
+        child: TextFormField(
+          // maxLength: length,
+          obscureText: obscur,
+          obscuringCharacter: '*',
+          controller: controller,
+          maxLines: maxlines,
+          keyboardType: keybord,
+          decoration: InputDecoration(
+            focusColor: primary,
+            hoverColor: secondary,
+            fillColor: gris,
+            hintText: hint,
+            border: InputBorder.none,
+            suffixIcon: IconButton(
+              onPressed: () {
+                controller?.clear();
+              },
+              icon: Icon(
+                Icons.close,
+                color: noir,
+                size: 16.0,
+              ),
+            ),
+            prefixIcon: Icon(
+              iconPrefix ?? Icons.person_outline_rounded,
+              color: primary,
+              size: 30,
+            ),
+            //prefix: Text('prefix'),
+          ),
+          style: TextStyle(
+            color: noir,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
+/////////
+////////////////
+///
+Widget dateField({
+  VoidCallback? tap,
+  final title,
+  String? hint,
+  TextEditingController? controller,
+  int? maxlines = 1,
+  IconData? icon,
+  IconData? prefixIcon,
+}) {
+  return Column(
+    children: [
+      Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        height: 55,
+        decoration: BoxDecoration(
+          border:
+              Border.all(color: primary, width: 1.0, style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: TextFormField(
+          controller: controller,
+          maxLines: maxlines,
+          keyboardType: TextInputType.datetime,
+          readOnly: true,
+          decoration: InputDecoration(
+            hintText: hint,
+            border: InputBorder.none,
+            prefixIcon: IconButton(
+              icon: Icon(
+                Icons.calendar_today_sharp,
+                color: primary,
+              ),
+              onPressed: tap,
+            ),
+            // suffixIcon: IconButton(
+            //   onPressed: () {
+            //     controller?.clear();
+            //   },
+            //   icon: Icon(
+            //     Icons.close,
+            //     color: noir,
+            //     size: 16.0,
+            //   ),
+            // ),
+          ),
+          style: TextStyle(
+            color: gris,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
+// search
+Widget searchTextField({
+  VoidCallback? tap,
+  final title,
+  String? hint,
+  TextEditingController? controller,
+  int? maxlines = 1,
+}) {
+  return Column(
+    children: [
+      Container(
+        height: 50,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.0),
+            color: blanc,
+            border: Border.all(
+              // color: gris,
+              // width: 1.0,
+              style: BorderStyle.none,
+            )),
+        child: TextFormField(
+          onEditingComplete: tap,
+          controller: controller,
+          maxLines: maxlines,
+          keyboardType: TextInputType.text,
+          decoration: InputDecoration(
+            hintText: hint,
+            border: InputBorder.none,
+            prefixIcon: GestureDetector(
+              onTap: tap,
+              child: const Icon(
+                Icons.search,
+              ),
+            ),
+            suffixIcon: IconButton(
+              onPressed: () {
+                controller?.clear();
+              },
+              icon: Icon(
+                Icons.close,
+                color: noir,
+                size: 16.0,
+              ),
+            ),
+          ),
+          style: TextStyle(
+            color: gris,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
+        ),
+      ),
+    ],
+  );
+}
