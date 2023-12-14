@@ -10,11 +10,12 @@ Widget buttonCustom({
   Color? iconColor,
   IconData? icon,
   final text,
+  double? width,
 }) {
   return ClipRRect(
     borderRadius: BorderRadius.circular(25),
     child: SizedBox(
-      width: 220,
+      width: width ?? 220,
       height: 50,
       child: MaterialButton(
           onPressed: tap,

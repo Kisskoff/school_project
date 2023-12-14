@@ -308,7 +308,7 @@ Widget etudiantComponent({
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 1,
         ),
         Row(
           children: [
@@ -365,5 +365,31 @@ Widget etudiantComponent({
       ],
       //
     ),
+  );
+}
+
+///
+//// wi
+Widget listle({
+  VoidCallback? tap,
+  IconData? lead,
+  final text,
+  Color? textcolor,
+}) {
+  return ListTile(
+    leading: Icon(
+      lead ?? Icons.eco_sharp,
+      color: gris,
+    ),
+    title: textSimple(
+      text: text,
+      textColor: textcolor,
+      size: 14,
+      align: TextAlign.left,
+    ),
+    // trailing: Icon(
+    //   Icons.arrow_forward_ios,
+    //   color: gris,
+    // ),
   );
 }

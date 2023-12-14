@@ -4,19 +4,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:school_project/components/button.dart';
+import 'package:school_project/components/dropdowEtudiant.dart';
+import 'package:school_project/components/dropdown.dart';
 import 'package:school_project/components/saisie.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
 
 // ignore: camel_case_types
-class Add_Matiere extends StatefulWidget {
-  const Add_Matiere({Key? key}) : super(key: key);
+class AddNote extends StatefulWidget {
+  const AddNote({Key? key}) : super(key: key);
 
   @override
-  State<Add_Matiere> createState() => _AddMatiereState();
+  State<AddNote> createState() => _AddNoteState();
 }
 
-class _AddMatiereState extends State<Add_Matiere> {
+class _AddNoteState extends State<AddNote> {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -25,7 +27,7 @@ class _AddMatiereState extends State<Add_Matiere> {
         child: Container(
           padding: const EdgeInsets.all(15),
           width: 400,
-          height: 340,
+          height: 350,
           color: blanc,
           child: Column(
             children: [
@@ -35,7 +37,7 @@ class _AddMatiereState extends State<Add_Matiere> {
               Row(
                 children: [
                   textSimple(
-                    text: 'Nouvelle matiere',
+                    text: 'Nouvelle note',
                     align: TextAlign.start,
                     textColor: noir,
                     size: 15,
@@ -45,46 +47,30 @@ class _AddMatiereState extends State<Add_Matiere> {
               const SizedBox(
                 height: 15,
               ),
-              saisie(
-                title: '',
-                hint: 'Nouvelle matiere',
-              ),
+              const DropItem(),
               const SizedBox(
                 height: 15,
               ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: blanc,
-                  border: Border.all(
-                    color: primary,
-                    width: 1.0,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-                child: TextFormField(
-                  //controller: controller,
-                  maxLines: 5,
-                  keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    label: Text('Description'),
-                    //hintText: 'Description',
-                    border: InputBorder.none,
-                  ),
-                  style: TextStyle(
-                    color: noir,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
-                ),
+              const Item(),
+              const SizedBox(
+                height: 15,
+              ),
+              saisie(
+                title: '',
+                hint: 'Nouvelle note',
+                keybord: TextInputType.number,
+                iconPrefix: Icons.note,
+                length: 1,
+              ),
+              const SizedBox(
+                height: 15,
               ),
               const SizedBox(
                 height: 15,
               ),
               buttonCustom(
                 tap: () {},
-                text: 'Valider',
+                text: '    Valider',
                 textColor: blanc,
                 color: primary,
                 btncolor: blanc,

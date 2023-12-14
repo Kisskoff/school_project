@@ -130,21 +130,20 @@ class _EtudiantState extends State<Etudiant> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 70,
-        titleSpacing: 0,
-        backgroundColor: Colors.transparent,
-        //title: textSimple(text: "Liste des etudiants"),
-        title: searchTextField(
-          title: '',
-          hint: 'Rechercher un etudiant',
-          tap: () {},
-        ),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 70,
+      //   titleSpacing: 0,
+      //   backgroundColor: Colors.transparent,
+      //   title: textSimple(
+      //     text: "Liste des etudiants".toUpperCase(),
+      //     textColor: primary,
+      //   ),
+      //   elevation: 0,
+      //   centerTitle: true,
+      // ),
       backgroundColor: blanc,
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,7 +188,7 @@ class _EtudiantState extends State<Etudiant> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '  listing'.toUpperCase(),
+                    '  Filtre'.toUpperCase(),
                     style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,

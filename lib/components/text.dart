@@ -35,5 +35,7 @@ Widget textSimple({
       fontWeight: FontWeight.normal,
       letterSpacing: 2,
     ),
+    maxLines: 3,
+    overflow: TextOverflow.ellipsis,
   );
 }

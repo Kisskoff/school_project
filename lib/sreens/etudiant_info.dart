@@ -1,4 +1,6 @@
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:school_project/components/Add/AddNote.dart';
 import 'package:school_project/components/button.dart';
 import 'package:school_project/components/container.dart';
 import 'package:school_project/components/text.dart';
@@ -87,7 +89,12 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                   btncolor: primary,
                   iconColor: blanc,
                   icon: Icons.add,
-                  tap: () {},
+                  tap: () {
+                    showAlignedDialog(
+                      context: context,
+                      builder: (context) => const AddNote(),
+                    );
+                  },
                 ),
 
                 const SizedBox(
@@ -165,7 +172,12 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                         hauteur: 80,
                         color: blanc,
                         icon: Icons.person,
-                        tap: () {}
+                        tap: () {
+                          showBottomSheet(
+                            context: context,
+                            builder: (context) => const UpdateCompte(),
+                          );
+                        }
                         //size: 100,
                         ),
                     const SizedBox(
@@ -197,6 +209,71 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class UpdateCompte extends StatelessWidget {
+  const UpdateCompte({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        width: 400,
+        height: 300,
+        padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+        decoration: BoxDecoration(
+          color: blanc,
+          // borderRadius: const BorderRadius.only(
+          //   topLeft: Radius.circular(20),
+          //   topRight: Radius.circular(20),
+          // ),
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                textSimple(
+                  text: 'Modifier le compte',
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.clear,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.infinity,
+              height: 2,
+              color: noir,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            //nom
+
+            const SizedBox(
+              height: 10,
+            ),
+            // prenom
+            const SizedBox(
+              height: 10,
+            ),
+
+            /// date
+            // const SizedBox(
+            //   height: 20,
+            // ),
+          ],
         ),
       ),
     );

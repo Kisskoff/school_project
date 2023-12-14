@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:school_project/components/container.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
-import 'package:school_project/sreens/cours.dart';
+import 'package:school_project/sreens/matiere.dart';
 
 class AccueilPage extends StatefulWidget {
   const AccueilPage({Key? key, required this.title}) : super(key: key);

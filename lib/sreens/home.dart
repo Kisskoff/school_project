@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:school_project/constant/colors.dart';
 import 'package:school_project/sreens/accueil.dart';
-import 'package:school_project/sreens/cours.dart';
+import 'package:school_project/sreens/matiere.dart';
 import 'package:school_project/sreens/etudiant.dart';
 import 'package:school_project/sreens/notif.dart';
 
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: page[currentPageSelected],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageSelected,
-        elevation: 0,
+        elevation: 10,
         type: BottomNavigationBarType.shifting,
         selectedItemColor: primary,
         unselectedItemColor: gris,

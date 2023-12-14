@@ -137,15 +137,16 @@ Widget searchTextField({
     children: [
       Container(
         height: 50,
+        width: double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             color: blanc,
             border: Border.all(
-              // color: gris,
-              // width: 1.0,
-              style: BorderStyle.none,
-            )),
+              color: primary,
+              width: 1.0,
+              style: BorderStyle.solid,
+            ),),
         child: TextFormField(
           onEditingComplete: tap,
           controller: controller,
