@@ -287,7 +287,7 @@ Widget etudiantComponent({
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: const Image(
-                      image: AssetImage("assets/images/graduated.png"),
+                      image: AssetImage("assets/images/account.png"),
                     ),
                   ),
                 ),

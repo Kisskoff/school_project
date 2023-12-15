@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:school_project/components/container.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
+import 'package:school_project/sreens/classe.dart';
 import 'package:school_project/sreens/matiere.dart';
 
 class AccueilPage extends StatefulWidget {
@@ -127,11 +128,18 @@ class _AccueilPageState extends State<AccueilPage> {
                     children: [
                       conteneur(
                         size: 200,
-                        text: 'Programming',
+                        text: 'Classes',
                         color: secondary,
                         textColor: noir,
                         colorFond: primary,
                         imagePath: 'assets/images/3d.png',
+                        tap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const ListClasse(),
+                            ),
+                          );
+                        },
                       ),
                       conteneur(
                         size: 200,
@@ -142,7 +150,6 @@ class _AccueilPageState extends State<AccueilPage> {
                       ),
                     ],
                   ),
-                  //ListView.builder(itemBuilder: itemBuilder)
                 ],
               ),
             ),

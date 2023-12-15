@@ -10,7 +10,7 @@ Widget saisie({
   bool obscur = false,
   final keybord,
   IconData? iconPrefix,
-  int? length = 4,
+  int? length = 50,
 }) {
   return Column(
     children: [
@@ -27,7 +27,7 @@ Widget saisie({
           ),
         ),
         child: TextFormField(
-          // maxLength: length,
+          //maxLength: length,
           obscureText: obscur,
           obscuringCharacter: '*',
           controller: controller,
@@ -140,13 +140,14 @@ Widget searchTextField({
         width: double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            color: blanc,
-            border: Border.all(
-              color: primary,
-              width: 1.0,
-              style: BorderStyle.solid,
-            ),),
+          borderRadius: BorderRadius.circular(8.0),
+          color: blanc,
+          border: Border.all(
+            color: primary,
+            width: 1.0,
+            style: BorderStyle.solid,
+          ),
+        ),
         child: TextFormField(
           onEditingComplete: tap,
           controller: controller,
@@ -180,5 +181,43 @@ Widget searchTextField({
         ),
       ),
     ],
+  );
+}
+
+/// saisie multiple
+/// //
+Widget saisieMultiLine({
+  final label,
+  TextEditingController? controller,
+  int? max,
+}) {
+  return Container(
+    padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8.0),
+      color: blanc,
+      border: Border.all(
+        color: primary,
+        width: 1.0,
+        style: BorderStyle.solid,
+      ),
+    ),
+    child: TextFormField(
+      controller: controller,
+      maxLines: 5,
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+        label: Text(
+          label ?? 'Description',
+        ),
+        //hintText: 'Description',
+        border: InputBorder.none,
+      ),
+      style: TextStyle(
+        color: noir,
+        fontWeight: FontWeight.bold,
+        fontSize: 14,
+      ),
+    ),
   );
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:school_project/constant/colors.dart';
 import 'package:school_project/sreens/accueil.dart';
-import 'package:school_project/sreens/matiere.dart';
 import 'package:school_project/sreens/etudiant.dart';
+import 'package:school_project/sreens/inscription.dart';
 import 'package:school_project/sreens/notif.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,9 +15,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List page = [
     const AccueilPage(title: 'Learning'),
-    const NosCours(
-      title: "Les Cours",
-    ),
+    const Inscrits(),
     const NotifPage(),
     const Etudiant(),
   ];

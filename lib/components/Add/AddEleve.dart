@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:school_project/components/button.dart';
+import 'package:school_project/components/dropCivilite.dart';
 import 'package:school_project/components/saisie.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
@@ -17,6 +18,12 @@ class _AjoutEleveState extends State<AjoutEleve> {
   TextEditingController nomController = TextEditingController();
   TextEditingController prenomController = TextEditingController();
   TextEditingController naissController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController adresseController = TextEditingController();
+  TextEditingController urgentController = TextEditingController();
+  TextEditingController civiliteController = TextEditingController();
+  TextEditingController lieuController = TextEditingController();
 
   // date time
   DateTime datetime = DateTime(2023, 12, 17, 15, 50);
@@ -44,41 +51,70 @@ class _AjoutEleveState extends State<AjoutEleve> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              textBold(
-                text: 'NOUVEAU ETUDIANT',
-                textColor: primary,
-                size: 20,
-              ),
-              const SizedBox(
-                height: 60,
-              ),
-              // saisie
-              // nom
-              saisie(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                textBold(
+                  text: 'NOUVEAU ETUDIANT',
+                  textColor: primary,
+                  size: 20,
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                // saisie
+                // nom
+                saisie(
+                    title: '',
+                    hint: 'Nom de l\'etudiant',
+                    controller: nomController
+                    //su
+                    ),
+                const SizedBox(
+                  height: 15,
+                ),
+                // prenom
+                saisie(
                   title: '',
-                  hint: 'Nom de l\'etudiant',
-                  controller: nomController
+                  hint: 'Prénoms de l\'etudiant',
+                  controller: prenomController,
+                  iconPrefix: Icons.person_outline,
                   //su
-                  ),
-              const SizedBox(
-                height: 15,
-              ),
-              // prenom
-              saisie(
-                title: '',
-                hint: 'Prénoms de l\'etudiant',
-                controller: prenomController,
-                iconPrefix: Icons.person_pin_circle_sharp,
-                //su
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              // date de naissance
-              dateField(
+                ),
+                // phone
+                const SizedBox(
+                  height: 15,
+                ),
+                // phone
+                saisie(
+                  title: '',
+                  hint: 'Numero de telephone',
+                  controller: phoneController,
+                  iconPrefix: Icons.phone,
+                  keybord: TextInputType.phone,
+                  length: 10,
+                  //su
+                ),
+                // email
+                const SizedBox(
+                  height: 15,
+                ),
+                //
+                saisie(
+                  title: '',
+                  hint: 'Adresse email',
+                  controller: mailController,
+                  iconPrefix: Icons.email_sharp,
+                  keybord: TextInputType.emailAddress,
+                  //su
+                ),
+                // date naissance
+                const SizedBox(
+                  height: 15,
+                ),
+                // date de naissance
+                dateField(
                   title: '${datetime.day}/${datetime.month}/${datetime.year}',
                   hint: '${datetime.day}/${datetime.month}/${datetime.year}',
                   //hint: 'Date de naissance',
@@ -87,7 +123,6 @@ class _AjoutEleveState extends State<AjoutEleve> {
                     final date = await pickDate();
                     debugPrint('$datetime');
                     if (date == null) return; // cancel
-
                     final newDateTime = DateTime(
                       date.year,
                       date.month,
@@ -96,23 +131,72 @@ class _AjoutEleveState extends State<AjoutEleve> {
                       date.minute,
                     );
 
-                    setState(() {
-                      datetime = newDateTime;
-                    });
-                  }),
-
-              const SizedBox(
-                height: 60,
-              ),
-              // bouton de validation
-              buttonCustom(
-                  color: primary,
-                  text: '    Valider',
-                  textColor: blanc,
-                  iconColor: primary,
-                  btncolor: blanc,
-                  tap: () {}),
-            ],
+                    setState(
+                      () {
+                        datetime = newDateTime;
+                      },
+                    );
+                  },
+                ),
+                // lieu naissance
+                const SizedBox(
+                  height: 15,
+                ),
+                // email
+                saisie(
+                  title: '',
+                  hint: 'Lieu de naissance',
+                  controller: lieuController,
+                  iconPrefix: Icons.person_pin_circle_sharp,
+                  keybord: TextInputType.emailAddress,
+                  //su
+                ),
+                // adresse
+                const SizedBox(
+                  height: 15,
+                ),
+                //
+                saisie(
+                  title: '',
+                  hint: 'Adresse',
+                  controller: adresseController,
+                  iconPrefix: Icons.pin,
+                  keybord: TextInputType.emailAddress,
+                  //su
+                ),
+                // sexe
+                const SizedBox(
+                  height: 10,
+                ),
+                const DropCivilite(),
+                // urgent phone
+                const SizedBox(
+                  height: 15,
+                ),
+                // email
+                saisie(
+                  title: '',
+                  hint: 'Numéro de parents',
+                  controller: urgentController,
+                  iconPrefix: Icons.phone_callback_outlined,
+                  keybord: TextInputType.phone,
+                  length: 10,
+                  //su
+                ),
+                //
+                const SizedBox(
+                  height: 60,
+                ),
+                // bouton de validation
+                buttonCustom(
+                    color: primary,
+                    text: '    Valider',
+                    textColor: blanc,
+                    iconColor: primary,
+                    btncolor: blanc,
+                    tap: () {}),
+              ],
+            ),
           ),
         ),
       ),

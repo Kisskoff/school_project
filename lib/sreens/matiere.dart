@@ -74,13 +74,15 @@ class _NosCoursState extends State<NosCours> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(Icons.arrow_back),
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+              ),
             ),
             title: textBold(
-              text: widget.title,
+              text: 'Matiere',
               textColor: blanc,
             ),
-            toolbarHeight: 200,
+            toolbarHeight: 150,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
                 "assets/images/white1.png",
@@ -124,7 +126,7 @@ class _NosCoursState extends State<NosCours> {
                               padding: const EdgeInsets.all(10),
                               width: double.infinity,
                               height: 320,
-                              color: secondary2,
+                              color: gris2,
                               child: Column(
                                 children: [
                                   Container(
@@ -167,7 +169,7 @@ class _NosCoursState extends State<NosCours> {
                                   textSimple(
                                     text: '${matiere.elementAt(index)['desc']}',
                                     size: 14,
-                                    textColor: blanc,
+                                    textColor: noir,
                                     align: TextAlign.left,
                                   ),
                                   const SizedBox(
@@ -184,7 +186,7 @@ class _NosCoursState extends State<NosCours> {
                                         onPressed: () {},
                                         icon: Icon(
                                           Icons.favorite,
-                                          color: blanc50,
+                                          color: secondary2,
                                         ),
                                       ),
                                       const SizedBox(
@@ -194,7 +196,7 @@ class _NosCoursState extends State<NosCours> {
                                         onPressed: () {},
                                         icon: Icon(
                                           Icons.share_outlined,
-                                          color: blanc50,
+                                          color: noir,
                                         ),
                                       ),
                                       const SizedBox(
@@ -216,7 +218,7 @@ class _NosCoursState extends State<NosCours> {
                                         },
                                         icon: Icon(
                                           Icons.more_vert,
-                                          color: blanc50,
+                                          color: noir,
                                         ),
                                       ),
                                     ],
@@ -287,7 +289,7 @@ class More extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 2,
-              color: noir,
+              color: gris,
             ),
             const SizedBox(
               height: 10,

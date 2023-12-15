@@ -44,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                 height: 20,
               ),
               textBold(
-                text: 'learning'.toUpperCase(),
+                text: 'learning',
                 size: 40,
                 textColor: blanc,
               ),

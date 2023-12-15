@@ -7,7 +7,6 @@ import 'package:school_project/components/button.dart';
 import 'package:school_project/components/dropdowEtudiant.dart';
 import 'package:school_project/components/dropdown.dart';
 import 'package:school_project/components/saisie.dart';
-import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
 
 // ignore: camel_case_types
@@ -25,25 +24,25 @@ class _AddNoteState extends State<AddNote> {
       borderRadius: BorderRadius.circular(30),
       child: Material(
         child: Container(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
           width: 400,
-          height: 350,
+          height: 310,
           color: blanc,
           child: Column(
             children: [
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                children: [
-                  textSimple(
-                    text: 'Nouvelle note',
-                    align: TextAlign.start,
-                    textColor: noir,
-                    size: 15,
-                  ),
-                ],
-              ),
+              // const SizedBox(
+              //   height: 15,
+              // ),
+              // Row(
+              //   children: [
+              //     textSimple(
+              //       text: 'Nouvelle note',
+              //       align: TextAlign.start,
+              //       textColor: noir,
+              //       size: 15,
+              //     ),
+              //   ],
+              // ),
               const SizedBox(
                 height: 15,
               ),

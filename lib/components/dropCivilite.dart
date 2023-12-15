@@ -3,30 +3,19 @@
 import 'package:flutter/material.dart';
 import 'package:school_project/constant/colors.dart';
 
-class Item extends StatefulWidget {
-  const Item({Key? key}) : super(key: key);
+class DropCivilite extends StatefulWidget {
+  const DropCivilite({Key? key}) : super(key: key);
 
   @override
-  State<Item> createState() => _ItemState();
+  State<DropCivilite> createState() => _DropCiviliteState();
 }
 
-class _ItemState extends State<Item> {
-  // etudiant
-  static const _etudiant = [
-    'Etudiant 1',
-    'Etudiant 2',
-    'Etudiant 3',
-    'Etudiant 4',
-    'Etudiant 5',
-    'Etudiant 6',
-    'Etudiant 7',
-    'Etudiant 8',
-    'Etudiant 9',
-    'Etudiant 10',
-    'Etudiant 11',
+class _DropCiviliteState extends State<DropCivilite> {
+  static const _sexe = [
+    'M',
+    'Mlle',
   ];
-
-  final List<DropdownMenuItem<String>> dropItems = _etudiant
+  final List<DropdownMenuItem<String>> dropDowMenuItems = _sexe
       .map(
         (String value) => DropdownMenuItem<String>(
           value: value,
@@ -52,7 +41,7 @@ class _ItemState extends State<Item> {
       ),
       child: ListTile(
         title: Text(
-          'ETUDIANT',
+          'Civilite',
           style: TextStyle(
             color: primary,
             fontWeight: FontWeight.bold,
@@ -69,9 +58,10 @@ class _ItemState extends State<Item> {
               });
             }
           },
-          items: dropItems,
+          items: dropDowMenuItems,
           // Utilisez InputDecoration pour personnaliser le style du DropdownButton.
           dropdownColor: blanc, // Couleur d'arrière-plan du menu déroulant
+
           underline: Container(), // Supprime la ligne de bordure
         ),
       ),

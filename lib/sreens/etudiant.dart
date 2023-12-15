@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:school_project/components/Add/AddEleve.dart';
+import 'package:school_project/components/button.dart';
 import 'package:school_project/components/container.dart';
 import 'package:school_project/components/saisie.dart';
 import 'package:school_project/constant/colors.dart';
@@ -164,7 +166,7 @@ class _EtudiantState extends State<Etudiant> {
                 height: 10,
               ),
               // popular
-              // // // listview
+              // // listview
               // Padding(
               //   padding: const EdgeInsets.all(20),
               //   child: ListView.builder(
@@ -181,19 +183,33 @@ class _EtudiantState extends State<Etudiant> {
               const SizedBox(
                 height: 15,
               ),
-
               // gridview
               // title
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '  Filtre'.toUpperCase(),
-                    style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        fontFamily: AutofillHints.familyName),
+                  buttonCustom(
+                    text: 'Nouveau etudiant',
+                    color: primary,
+                    textColor: blanc,
+                    btncolor: blanc,
+                    iconColor: primary,
+                    icon: Icons.add,
+                    tap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const AjoutEleve(),
+                        ),
+                      );
+                    },
                   ),
+                  // Text(
+                  //   '  Filtre'.toUpperCase(),
+                  //   style: const TextStyle(
+                  //       fontSize: 16,
+                  //       fontWeight: FontWeight.normal,
+                  //       fontFamily: AutofillHints.familyName),
+                  // ),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -217,7 +233,7 @@ class _EtudiantState extends State<Etudiant> {
                       crossAxisCount: 3,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
-                      mainAxisExtent: 200,
+                      mainAxisExtent: 180,
                     ),
                     itemBuilder: (_, index) {
                       return etudiantComponent(

@@ -31,7 +31,7 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
         title: textSimple(
           text: 'Profile',
           textColor: blanc,
-          size: 16,
+          size: 18,
           align: TextAlign.center,
         ),
         centerTitle: true,
@@ -96,7 +96,6 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                     );
                   },
                 ),
-
                 const SizedBox(
                   height: 35,
                 ),
@@ -173,7 +172,7 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                         color: blanc,
                         icon: Icons.person,
                         tap: () {
-                          showBottomSheet(
+                          showModalBottomSheet(
                             context: context,
                             builder: (context) => const UpdateCompte(),
                           );
@@ -249,11 +248,11 @@ class UpdateCompte extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               width: double.infinity,
-              height: 2,
+              height: 1,
               color: noir,
             ),
             const SizedBox(

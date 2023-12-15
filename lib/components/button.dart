@@ -26,11 +26,11 @@ Widget buttonCustom({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                text,
+                text.toString().toUpperCase(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: textColor ?? noir,
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
