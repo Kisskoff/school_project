@@ -82,13 +82,13 @@ class _NosCoursState extends State<NosCours> {
               text: 'Matiere',
               textColor: blanc,
             ),
-            toolbarHeight: 150,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/images/white1.png",
-                fit: BoxFit.cover,
-              ),
-            ),
+            toolbarHeight: 100,
+            flexibleSpace: const FlexibleSpaceBar(
+                // background: Image.asset(
+                //   "assets/images/fond2.jpg",
+                //   fit: BoxFit.fitWidth,
+                // ),
+                ),
             backgroundColor: secondary2,
             actions: [
               IconButton(
@@ -135,16 +135,16 @@ class _NosCoursState extends State<NosCours> {
                                     decoration: BoxDecoration(
                                       color: blanc50,
                                       borderRadius: BorderRadius.circular(20),
-                                      // image: const DecorationImage(
-                                      //   image: AssetImage(
-                                      //       'assets/images/white.png'),
-                                      // ),
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/fond.jpg'),
+                                      ),
                                     ),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(20),
                                       child: const Image(
                                         image: AssetImage(
-                                            "assets/images/white1.png"),
+                                            "assets/images/fond.jpg"),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

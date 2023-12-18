@@ -165,21 +165,8 @@ class _EtudiantState extends State<Etudiant> {
               const SizedBox(
                 height: 10,
               ),
-              // popular
-              // // listview
-              // Padding(
-              //   padding: const EdgeInsets.all(20),
-              //   child: ListView.builder(
-              //     itemCount: gridMap.length,
-              //     itemBuilder: (_, index) {
-              //       return Container(
-              //         width: double.infinity,
-              //         height: 200,
-              //         color: Colors.amber,
-              //       );
-              //     },
-              //   ),
-              // ),
+              
+             
               const SizedBox(
                 height: 15,
               ),
@@ -203,13 +190,7 @@ class _EtudiantState extends State<Etudiant> {
                       );
                     },
                   ),
-                  // Text(
-                  //   '  Filtre'.toUpperCase(),
-                  //   style: const TextStyle(
-                  //       fontSize: 16,
-                  //       fontWeight: FontWeight.normal,
-                  //       fontFamily: AutofillHints.familyName),
-                  // ),
+                 
                   IconButton(
                     onPressed: () {},
                     icon: Icon(

@@ -35,12 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Accueil',
             activeIcon: Icon(Icons.home_outlined),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmark),
-            label: 'Favoris',
+            label: 'Inscription',
             activeIcon: Icon(Icons.bookmark_border),
           ),
           BottomNavigationBarItem(
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Account',
+            label: 'Compte',
             activeIcon: Icon(
               Icons.account_circle_rounded,
             ),

@@ -64,6 +64,11 @@ class _AjoutEleveState extends State<AjoutEleve> {
                   height: 60,
                 ),
                 // saisie
+                const DropCivilite(),
+                // sexe
+                const SizedBox(
+                  height: 10,
+                ),
                 // nom
                 saisie(
                     title: '',
@@ -164,11 +169,7 @@ class _AjoutEleveState extends State<AjoutEleve> {
                   keybord: TextInputType.emailAddress,
                   //su
                 ),
-                // sexe
-                const SizedBox(
-                  height: 10,
-                ),
-                const DropCivilite(),
+
                 // urgent phone
                 const SizedBox(
                   height: 15,

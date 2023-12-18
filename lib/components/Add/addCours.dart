@@ -28,19 +28,6 @@ class _AddMatiereState extends State<Add_Matiere> {
           color: blanc,
           child: Column(
             children: [
-              // const SizedBox(
-              //   height: 15,
-              // ),
-              // Row(
-              //   children: [
-              //     textSimple(
-              //       text: 'Nouvelle matiere',
-              //       align: TextAlign.start,
-              //       textColor: noir,
-              //       size: 15,
-              //     ),
-              //   ],
-              // ),
               const SizedBox(
                 height: 15,
               ),

@@ -5,8 +5,19 @@ import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
 import 'package:school_project/sreens/home.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    navigate();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +55,7 @@ class SplashScreen extends StatelessWidget {
                 height: 20,
               ),
               textBold(
-                text: 'learning',
+                text: 'learning'.toUpperCase(),
                 size: 40,
                 textColor: blanc,
               ),
@@ -53,11 +64,12 @@ class SplashScreen extends StatelessWidget {
               ),
               buttonCustom(
                 tap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const MyHomePage(),
-                    ),
-                  );
+                  navigate();
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const MyHomePage(),
+                  //   ),
+                  // );
                 },
                 text: ' Continuer'.toUpperCase(),
                 textColor: primary,
@@ -70,5 +82,16 @@ class SplashScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void navigate() {
+    //
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const MyHomePage()),
+        (route) => false,
+      );
+    });
   }
 }

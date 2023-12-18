@@ -1,4 +1,10 @@
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:school_project/components/Add/addAnne.dart';
+import 'package:school_project/components/button.dart';
+import 'package:school_project/components/dropclasse.dart';
+import 'package:school_project/components/dropdowEtudiant.dart';
+import 'package:school_project/components/saisie.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
 
@@ -10,130 +16,255 @@ class Inscrits extends StatefulWidget {
 }
 
 class _InscritsState extends State<Inscrits> {
-  final List<Map<String, dynamic>> _inscrit = [
-    {
-      "id": 1,
-      "nom": "Justin Kouakou",
-      "desc": "Lc",
-      "date": "2020/09/10",
-      "annee": "2020-2021",
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     // Exemple de données pour la liste
-    List<String> items = List.generate(10, (index) => 'Item $index');
+    List<String> items = List.generate(100, (index) => 'Année $index');
 
     return Scaffold(
-      // body: Column(
-      //   children: [
-      //     ListView.builder(
-      //       itemCount: items.length,
-      //       itemBuilder: (context, index) {
-      //         return ListTile(
-      //           title: Text(
-      //             items[index],
-      //           ),
-      //         );
-      //       },
-      //     ),
-      //     // text
-      //     textBold(
-      //       text: 'Liste des incrits',
-      //     ),
-      //   ],
-      // ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            titleSpacing: 4,
-            pinned: false,
-            // floating: true,
-            // snap: true,
-            // stretch: true,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: primary,
-              ),
+      appBar: AppBar(
+        toolbarHeight: 100,
+        elevation: 0,
+        backgroundColor: primary,
+        title: textBold(
+          text: 'Fiche des inscription',
+          textColor: blanc,
+          size: 15,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                  context: context, builder: (context) => const PlusInscrit());
+            },
+            icon: Icon(
+              Icons.add_circle,
+              color: blanc,
+              size: 30,
             ),
-            title: textBold(
-              text: 'Fiche des inscription',
-              textColor: primary,
-            ),
-            toolbarHeight: 100,
-            flexibleSpace: const FlexibleSpaceBar(),
-            backgroundColor: blanc50,
-            actions: [
-              IconButton(
-                onPressed: () {
-                  // showAlignedDialog(
-                  //   context: context,
-                  //   builder: ((context) => const Add_Matiere()),
-                  // );
-                },
-                icon: Icon(
-                  Icons.messenger_outline,
-                  size: 30,
-                  color: primary,
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+        ],
+      ),
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(25, 20, 25, 10),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-            ],
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    decoration: BoxDecoration(
-                      color: gris2,
-                      borderRadius: BorderRadius.circular(10),
+                // recherche
+                searchTextField(
+                  title: '',
+                  hint: 'Recherche',
+                  tap: () {},
+                ),
+
+                // Annee scolaire
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: violet,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          showAlignedDialog(
+                            context: context,
+                            builder: (context) => const AddAnnee(),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.add_box,
+                          color: blanc,
+                        ),
+                      ),
                     ),
-                    width: 100,
-                    height: 50,
-                    child: textSimple(text: 'Item $index'),
+                    Expanded(
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: items.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Container(
+                                width: 120,
+                                //height: 30,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: primary,
+                                  borderRadius: BorderRadius.circular(30),
+                                  shape: BoxShape.rectangle,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    textSimple(
+                                      text: items[index].toUpperCase(),
+                                      textColor: blanc,
+                                    ),
+                                    // const Icon(
+                                    //   Icons.cloud_queue,
+                                    // ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  flex: 5,
+                  child: SizedBox(
+                    //height: 600,
+                    child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: double.infinity,
+                          //height: 90,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                              width: 2,
+                              color: gris,
+                            ),
+                          ),
+
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 90,
+                                decoration: BoxDecoration(
+                                  color: gris,
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    bottomLeft: Radius.circular(15),
+                                  ),
+                                ),
+                                child: Icon(
+                                  Icons.person,
+                                  size: 40,
+                                  color: blanc,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  textBold(
+                                    text: items[index],
+                                  ),
+                                  textSimple(
+                                    text: items[index],
+                                  ),
+                                  textSimple(
+                                    text: items[index],
+                                    size: 12,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: 10,
+                        );
+                      },
+                      itemCount: items.length,
+                    ),
                   ),
-                );
-              },
-              childCount: items.length,
-            ),
-          ),
-          // const SizedBox(
-          //   height: 10,
-          // ),
-          //
-          // textBold(
-          //   text: 'Liste inscription',
-          //   textColor: primary,
-          // ),
-          // const SizedBox(
-          //   height: 10,
-          // ),
-          SliverGrid(
-            delegate:
-                SliverChildBuilderDelegate((BuildContext context, int index) {
-              return Container(
-                height: 50,
-                width: 100,
-                color: primary,
-                child: Text('${_inscrit.elementAt(index)['nom']}'),
-              );
-            }),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1, // Nombre d'éléments par ligne
-              crossAxisSpacing: 8.0, // Espacement horizontal entre les éléments
-              mainAxisSpacing: 8.0, // Espacement vertical entre les éléments
+                ),
+              ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// add plus inscrit
+class PlusInscrit extends StatelessWidget {
+  const PlusInscrit({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        width: double.infinity,
+        height: 400,
+        color: blanc,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(40, 8, 40, 10),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // textSimple(
+                  //   text: 'Options',
+                  // ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.clear,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const DropClasse(),
+              const SizedBox(
+                height: 10,
+              ),
+              const Item(),
+              const SizedBox(
+                height: 10,
+              ),
+              saisieMultiLine(),
+              const SizedBox(
+                height: 15,
+              ),
+              buttonCustom(
+                tap: () {},
+                text: '  Valider',
+                textColor: blanc,
+                color: primary,
+                btncolor: blanc,
+                iconColor: primary,
+                width: 300,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -96,7 +96,7 @@ class _AccueilPageState extends State<AccueilPage> {
                     children: [
                       conteneur(
                           size: 200,
-                          text: 'Liste des matieres',
+                          text: 'Liste des matieres'.toUpperCase(),
                           color: secondary,
                           textColor: noir,
                           colorFond: secondary2,
@@ -113,7 +113,7 @@ class _AccueilPageState extends State<AccueilPage> {
                           }),
                       conteneur(
                         size: 200,
-                        text: 'Diplomes',
+                        text: 'Diplomes'.toUpperCase(),
                         textColor: noir,
                         colorFond: secondary,
                         imagePath: 'assets/images/graduation-hat.png',
@@ -128,7 +128,7 @@ class _AccueilPageState extends State<AccueilPage> {
                     children: [
                       conteneur(
                         size: 200,
-                        text: 'Classes',
+                        text: 'Classes'.toUpperCase(),
                         color: secondary,
                         textColor: noir,
                         colorFond: primary,
@@ -143,7 +143,7 @@ class _AccueilPageState extends State<AccueilPage> {
                       ),
                       conteneur(
                         size: 200,
-                        text: 'Parametrages',
+                        text: 'Parametrages'.toUpperCase(),
                         textColor: noir,
                         colorFond: vert,
                         imagePath: 'assets/images/engineering.png',

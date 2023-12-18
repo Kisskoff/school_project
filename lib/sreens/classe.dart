@@ -56,7 +56,8 @@ class _ListClasseState extends State<ListClasse> {
     return Scaffold(
       //backgroundColor: blanc,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        toolbarHeight: 100,
+        backgroundColor: primary,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -64,8 +65,13 @@ class _ListClasseState extends State<ListClasse> {
           },
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: primary,
+            color: blanc,
           ),
+        ),
+        title: textSimple(
+          text: 'Listing des classes'.toUpperCase(),
+          align: TextAlign.left,
+          textColor: blanc,
         ),
         actions: [
           IconButton(
@@ -78,7 +84,7 @@ class _ListClasseState extends State<ListClasse> {
             },
             icon: Icon(
               Icons.add_circle_rounded,
-              color: primary,
+              color: blanc,
               size: 40,
             ),
           ),
@@ -92,15 +98,15 @@ class _ListClasseState extends State<ListClasse> {
           padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
-              // titre
-              textBold(
-                text: 'Listing des classes'.toUpperCase(),
-                align: TextAlign.left,
-                size: 30,
-              ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // // titre
+              // textBold(
+              //   text: 'Listing des classes'.toUpperCase(),
+              //   align: TextAlign.left,
+              //   size: 30,
+              // ),
               const SizedBox(
                 height: 20,
               ),

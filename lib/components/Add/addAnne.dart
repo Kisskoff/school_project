@@ -1,0 +1,61 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
+import 'package:school_project/components/button.dart';
+import 'package:school_project/components/saisie.dart';
+import 'package:school_project/constant/colors.dart';
+
+class AddAnnee extends StatelessWidget {
+  const AddAnnee({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: Material(
+        child: Container(
+          width: 400,
+          height: 330,
+          color: blanc,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(40, 8, 40, 10),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.clear,
+                      ),
+                    ),
+                  ],
+                ),
+                saisie(
+                    iconPrefix: Icons.date_range,
+                    hint: 'Saisie une année scolaire'),
+                const SizedBox(
+                  height: 15,
+                ),
+                saisieMultiLine(),
+                const SizedBox(
+                  height: 15,
+                ),
+                buttonCustom(
+                  tap: () {},
+                  text: '  Valider',
+                  textColor: blanc,
+                  color: primary,
+                  btncolor: blanc,
+                  iconColor: primary,
+                  width: 300,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -60,28 +60,29 @@ class _NotifPageState extends State<NotifPage> {
             // floating: true,
             // snap: true,
             // stretch: true,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: primary,
-              ),
-            ),
+            // leading: IconButton(
+            //   onPressed: () {
+            //     Navigator.pop(context);
+            //   },
+            //   icon: Icon(
+            //     Icons.arrow_back_ios,
+            //     color: primary,
+            //   ),
+            // ),
             title: textBold(
               text: 'Notification',
-              textColor: primary,
+              textColor: blanc,
             ),
             toolbarHeight: 100,
+
             flexibleSpace: const FlexibleSpaceBar(
 
                 // background: Image.asset(
-                //   "assets/images/white3.jpg",
+                //   "assets/images/white2.jpg",
                 //   fit: BoxFit.cover,
                 // ),
                 ),
-            backgroundColor: blanc50,
+            backgroundColor: primary,
             actions: [
               IconButton(
                 onPressed: () {
@@ -93,7 +94,7 @@ class _NotifPageState extends State<NotifPage> {
                 icon: Icon(
                   Icons.messenger_outline,
                   size: 30,
-                  color: primary,
+                  color: blanc,
                 ),
               ),
               const SizedBox(
@@ -109,7 +110,7 @@ class _NotifPageState extends State<NotifPage> {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                     decoration: BoxDecoration(
                       color: gris2,
                       borderRadius: BorderRadius.circular(10),
