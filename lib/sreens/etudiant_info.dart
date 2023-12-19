@@ -5,6 +5,7 @@ import 'package:school_project/components/button.dart';
 import 'package:school_project/components/container.dart';
 import 'package:school_project/components/text.dart';
 import 'package:school_project/constant/colors.dart';
+import 'package:school_project/sreens/note.dart';
 
 class EtudiantInfo extends StatefulWidget {
   const EtudiantInfo({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
             Navigator.pop(context);
           },
           icon: Icon(
-            Icons.arrow_back_ios,
+            Icons.clear,
             color: blanc,
           ),
         ),
@@ -100,7 +101,6 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                   height: 35,
                 ),
                 // bord rang moyenne
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -188,7 +188,12 @@ class _EtudiantInfoState extends State<EtudiantInfo> {
                         hauteur: 80,
                         color: blanc,
                         icon: Icons.personal_injury,
-                        tap: () {}
+                        tap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const LesNotes()),
+                          );
+                        }
                         //size: 100,
                         ),
                     const SizedBox(

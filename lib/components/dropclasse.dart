@@ -52,13 +52,21 @@ class _DropClasseState extends State<DropClasse> {
           'Classe',
           style: TextStyle(
             color: primary,
+            fontFamily: 'Camaro',
             fontWeight: FontWeight.bold,
           ),
         ),
         trailing: DropdownButton<String>(
-          style: TextStyle(color: noir),
+          style: TextStyle(
+            color: noir,
+          ),
           value: _btnSelect,
-          hint: const Text('Choisir'),
+          hint: const Text(
+            'Choisir',
+            style: TextStyle(
+              fontFamily: 'Camaro',
+            ),
+          ),
           onChanged: (String? newValue) {
             if (newValue != null) {
               setState(() {

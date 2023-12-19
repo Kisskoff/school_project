@@ -47,11 +47,36 @@ class _NotifPageState extends State<NotifPage> {
       "desc":
           "dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc",
     },
+    {
+      "id": 1,
+      "libelle": "Informatique",
+      "desc":
+          "dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc",
+    },
+    {
+      "id": 1,
+      "libelle": "Informatique",
+      "desc":
+          "dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc",
+    },
+    {
+      "id": 1,
+      "libelle": "Informatique",
+      "desc":
+          "dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc",
+    },
+    {
+      "id": 1,
+      "libelle": "Informatique",
+      "desc":
+          "dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc",
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primary,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -60,15 +85,15 @@ class _NotifPageState extends State<NotifPage> {
             // floating: true,
             // snap: true,
             // stretch: true,
-            // leading: IconButton(
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            //   icon: Icon(
-            //     Icons.arrow_back_ios,
-            //     color: primary,
-            //   ),
-            // ),
+            leading: IconButton(
+              onPressed: () {
+                //Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.clear_rounded,
+                color: blanc,
+              ),
+            ),
             title: textBold(
               text: 'Notification',
               textColor: blanc,
@@ -112,7 +137,7 @@ class _NotifPageState extends State<NotifPage> {
                   child: Container(
                     padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                     decoration: BoxDecoration(
-                      color: gris2,
+                      color: blanc50,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     width: double.infinity,
@@ -127,7 +152,7 @@ class _NotifPageState extends State<NotifPage> {
                         text: '${notif.elementAt(index)['libelle']}'
                             .toUpperCase(),
                         size: 18,
-                        textColor: noir,
+                        textColor: blanc,
                       ),
                       subtitle:
                           textSimple(text: '${notif.elementAt(index)['desc']}'),

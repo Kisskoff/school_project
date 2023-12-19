@@ -38,6 +38,9 @@ Widget saisie({
             hoverColor: secondary,
             fillColor: gris,
             hintText: hint,
+            hintStyle: const TextStyle(
+              fontFamily: 'Camaro',
+            ),
             border: InputBorder.none,
             suffixIcon: IconButton(
               onPressed: () {
@@ -58,6 +61,7 @@ Widget saisie({
           ),
           style: TextStyle(
             color: noir,
+            fontFamily: 'Camaro',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -96,6 +100,9 @@ Widget dateField({
           readOnly: true,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: const TextStyle(
+              fontFamily: 'Camaro',
+            ),
             border: InputBorder.none,
             prefixIcon: IconButton(
               icon: Icon(
@@ -117,6 +124,7 @@ Widget dateField({
           ),
           style: TextStyle(
             color: gris,
+            fontFamily: 'Camaro',
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -132,6 +140,7 @@ Widget searchTextField({
   String? hint,
   TextEditingController? controller,
   int? maxlines = 1,
+  Color? borderColor,
 }) {
   return Column(
     children: [
@@ -140,10 +149,10 @@ Widget searchTextField({
         width: double.infinity,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(10.0),
           color: blanc,
           border: Border.all(
-            color: primary,
+            color: borderColor ?? primary,
             width: 1.0,
             style: BorderStyle.solid,
           ),
@@ -155,6 +164,9 @@ Widget searchTextField({
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: const TextStyle(
+              fontFamily: 'Camaro',
+            ),
             border: InputBorder.none,
             prefixIcon: GestureDetector(
               onTap: tap,
@@ -177,6 +189,7 @@ Widget searchTextField({
             color: gris,
             fontWeight: FontWeight.bold,
             fontSize: 14,
+            fontFamily: 'Camaro',
           ),
         ),
       ),
@@ -209,6 +222,9 @@ Widget saisieMultiLine({
       decoration: InputDecoration(
         label: Text(
           label ?? 'Description',
+          style: const TextStyle(
+            fontFamily: 'Camaro',
+          ),
         ),
         //hintText: 'Description',
         border: InputBorder.none,
@@ -216,6 +232,7 @@ Widget saisieMultiLine({
       style: TextStyle(
         color: noir,
         fontWeight: FontWeight.bold,
+        fontFamily: 'Camaro',
         fontSize: 14,
       ),
     ),

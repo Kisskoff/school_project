@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_project/constant/colors.dart';
 import 'package:school_project/sreens/splash.dart';
 
 void main() {
@@ -13,8 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          //primarySwatch: primary,
-          ),
+        primaryColor: primary,
+        fontFamily: 'Camilla',
+      ),
+      //home: const SearchPage(),
       home: const SplashScreen(),
     );
   }

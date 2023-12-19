@@ -45,12 +45,18 @@ class _DropCiviliteState extends State<DropCivilite> {
           style: TextStyle(
             color: primary,
             fontWeight: FontWeight.bold,
+            fontFamily: 'Camaro',
           ),
         ),
         trailing: DropdownButton<String>(
           style: TextStyle(color: noir),
           value: _btnSelect,
-          hint: const Text('Choisir'),
+          hint: const Text(
+            'Choisir',
+            style: TextStyle(
+              fontFamily: 'Camaro',
+            ),
+          ),
           onChanged: (String? newValue) {
             if (newValue != null) {
               setState(() {

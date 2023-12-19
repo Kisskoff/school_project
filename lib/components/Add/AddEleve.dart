@@ -37,7 +37,7 @@ class _AjoutEleveState extends State<AjoutEleve> {
             Navigator.pop(context);
           },
           icon: Icon(
-            Icons.arrow_back_ios,
+            Icons.clear,
             color: primary,
           ),
         ),

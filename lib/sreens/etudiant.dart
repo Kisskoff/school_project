@@ -143,7 +143,7 @@ class _EtudiantState extends State<Etudiant> {
       //   elevation: 0,
       //   centerTitle: true,
       // ),
-      backgroundColor: blanc,
+      backgroundColor: primary,
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
         child: SingleChildScrollView(
@@ -151,7 +151,7 @@ class _EtudiantState extends State<Etudiant> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
               //search
               searchTextField(
@@ -161,14 +161,8 @@ class _EtudiantState extends State<Etudiant> {
               ),
 
               // categorie
-              //
               const SizedBox(
-                height: 10,
-              ),
-              
-             
-              const SizedBox(
-                height: 15,
+                height: 50,
               ),
               // gridview
               // title
@@ -177,10 +171,10 @@ class _EtudiantState extends State<Etudiant> {
                 children: [
                   buttonCustom(
                     text: 'Nouveau etudiant',
-                    color: primary,
-                    textColor: blanc,
-                    btncolor: blanc,
-                    iconColor: primary,
+                    color: blanc,
+                    textColor: primary,
+                    btncolor: primary,
+                    iconColor: blanc,
                     icon: Icons.add,
                     tap: () {
                       Navigator.of(context).push(
@@ -190,18 +184,17 @@ class _EtudiantState extends State<Etudiant> {
                       );
                     },
                   ),
-                 
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.filter_list,
-                      color: primary,
+                      color: blanc,
                     ),
                   ),
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 60,
               ),
               Padding(
                 padding: const EdgeInsets.all(2),
@@ -211,7 +204,7 @@ class _EtudiantState extends State<Etudiant> {
                     itemCount: gridMap.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
+                      crossAxisCount: 2,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                       mainAxisExtent: 180,
@@ -219,7 +212,7 @@ class _EtudiantState extends State<Etudiant> {
                     itemBuilder: (_, index) {
                       return etudiantComponent(
                         colorFond: blanc,
-                        color: violet,
+                        color: blanc,
                         text:
                             "${gridMap.elementAt(index)['name']}".toUpperCase(),
                         textColor: noir,

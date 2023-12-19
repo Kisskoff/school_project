@@ -64,7 +64,7 @@ class _ListClasseState extends State<ListClasse> {
             Navigator.pop(context);
           },
           icon: Icon(
-            Icons.arrow_back_ios_new,
+            Icons.clear,
             color: blanc,
           ),
         ),
@@ -117,7 +117,7 @@ class _ListClasseState extends State<ListClasse> {
               const SizedBox(
                 height: 40,
               ),
-              searchTextField(),
+              searchTextField(hint: 'rechercher une classe'),
               const SizedBox(
                 height: 30,
               ),
@@ -166,13 +166,13 @@ class _ListClasseState extends State<ListClasse> {
                             textColor: blanc,
                             btncolor: primary,
                             iconColor: blanc,
-                            width: 155,
+                            width: 160,
                             tap: () {},
                           ),
                         ),
                       ),
                       const SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
                     ],
                   );

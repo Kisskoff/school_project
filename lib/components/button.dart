@@ -30,7 +30,9 @@ Widget buttonCustom({
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: textColor ?? noir,
-                  fontSize: 14,
+                  fontSize: 15,
+                  letterSpacing: 0.5,
+                  fontFamily: 'Camaro',
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -62,6 +62,7 @@ class _NosCoursState extends State<NosCours> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: secondary2,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -74,21 +75,19 @@ class _NosCoursState extends State<NosCours> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(
-                Icons.arrow_back_ios_new,
-              ),
+              icon: const Icon(Icons.clear),
             ),
             title: textBold(
               text: 'Matiere',
               textColor: blanc,
             ),
             toolbarHeight: 100,
-            flexibleSpace: const FlexibleSpaceBar(
-                // background: Image.asset(
-                //   "assets/images/fond2.jpg",
-                //   fit: BoxFit.fitWidth,
-                // ),
-                ),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Image.asset(
+                "assets/images/fond.jpg",
+                fit: BoxFit.fitWidth,
+              ),
+            ),
             backgroundColor: secondary2,
             actions: [
               IconButton(
@@ -176,7 +175,6 @@ class _NosCoursState extends State<NosCours> {
                                     height: 10,
                                   ),
 
-                                  ///
                                   ///
                                   /// manipulation
                                   Row(

@@ -15,6 +15,7 @@ Widget textBold({
       fontSize: size ?? 25,
       fontWeight: FontWeight.bold,
       letterSpacing: 2,
+      fontFamily: 'Camelot',
     ),
   );
 }
@@ -30,11 +31,11 @@ Widget textSimple({
     text,
     textAlign: align ?? TextAlign.start,
     style: TextStyle(
-      color: textColor ?? noir,
-      fontSize: size ?? 16,
-      fontWeight: FontWeight.normal,
-      letterSpacing: 2,
-    ),
+        color: textColor ?? noir,
+        fontSize: size ?? 16,
+        fontWeight: FontWeight.normal,
+        letterSpacing: 2,
+        fontFamily: 'Camaro'),
     maxLines: 3,
     overflow: TextOverflow.ellipsis,
   );

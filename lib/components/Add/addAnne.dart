@@ -15,26 +15,28 @@ class AddAnnee extends StatelessWidget {
       child: Material(
         child: Container(
           width: 400,
-          height: 330,
+          height: 320,
           color: blanc,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(40, 8, 40, 10),
+            padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.clear,
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     IconButton(
+                //       onPressed: () {},
+                //       icon: const Icon(
+                //         Icons.clear,
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 saisie(
-                    iconPrefix: Icons.date_range,
-                    hint: 'Saisie une année scolaire'),
+                  iconPrefix: Icons.date_range,
+                  hint: 'Saisie une année scolaire',
+                ),
                 const SizedBox(
                   height: 15,
                 ),

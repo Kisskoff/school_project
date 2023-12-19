@@ -64,6 +64,7 @@ Widget conteneur({
             style: TextStyle(
               fontSize: sizeText,
               color: textColor,
+              fontFamily: 'Camaro',
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -168,9 +169,9 @@ Widget conteneurHome({
                       text,
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                        fontSize: sizeText,
-                        color: textColor,
-                      ),
+                          fontSize: sizeText,
+                          color: textColor,
+                          fontFamily: 'Camilla'),
                       maxLines: 6,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -287,7 +288,9 @@ Widget etudiantComponent({
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: const Image(
-                      image: AssetImage("assets/images/account.png"),
+                      image: AssetImage(
+                        "assets/images/graduated.png",
+                      ),
                     ),
                   ),
                 ),
@@ -308,7 +311,7 @@ Widget etudiantComponent({
           ),
         ),
         const SizedBox(
-          height: 1,
+          height: 10,
         ),
         Row(
           children: [
@@ -319,6 +322,7 @@ Widget etudiantComponent({
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: textColor,
+                  fontFamily: 'Camaro',
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 1,

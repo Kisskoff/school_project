@@ -22,14 +22,24 @@ class _InscritsState extends State<Inscrits> {
     List<String> items = List.generate(100, (index) => 'Année $index');
 
     return Scaffold(
+      backgroundColor: primary,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            //Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.clear_rounded,
+            color: blanc,
+          ),
+        ),
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: primary,
         title: textBold(
           text: 'Fiche des inscription',
           textColor: blanc,
-          size: 15,
+          size: 16,
         ),
         actions: [
           IconButton(
@@ -74,7 +84,7 @@ class _InscritsState extends State<Inscrits> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: violet,
+                        color: bleu,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
@@ -85,8 +95,9 @@ class _InscritsState extends State<Inscrits> {
                           );
                         },
                         icon: Icon(
-                          Icons.add_box,
+                          Icons.add,
                           color: blanc,
+                          size: 30,
                         ),
                       ),
                     ),
@@ -105,7 +116,7 @@ class _InscritsState extends State<Inscrits> {
                                 //height: 30,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
-                                  color: primary,
+                                  color: blanc,
                                   borderRadius: BorderRadius.circular(30),
                                   shape: BoxShape.rectangle,
                                 ),
@@ -115,7 +126,7 @@ class _InscritsState extends State<Inscrits> {
                                   children: [
                                     textSimple(
                                       text: items[index].toUpperCase(),
-                                      textColor: blanc,
+                                      textColor: primary,
                                     ),
                                     // const Icon(
                                     //   Icons.cloud_queue,
@@ -144,20 +155,20 @@ class _InscritsState extends State<Inscrits> {
                           //height: 90,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
+                            color: blanc50,
                             borderRadius: BorderRadius.circular(15),
                             border: Border.all(
-                              width: 2,
-                              color: gris,
+                              width: 0,
+                              color: blanc50,
                             ),
                           ),
-
                           child: Row(
                             children: [
                               Container(
                                 width: 100,
                                 height: 90,
                                 decoration: BoxDecoration(
-                                  color: gris,
+                                  color: blanc50,
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(15),
                                     bottomLeft: Radius.circular(15),
@@ -166,7 +177,7 @@ class _InscritsState extends State<Inscrits> {
                                 child: Icon(
                                   Icons.person,
                                   size: 40,
-                                  color: blanc,
+                                  color: primary,
                                 ),
                               ),
                               const SizedBox(
@@ -183,7 +194,8 @@ class _InscritsState extends State<Inscrits> {
                                   ),
                                   textSimple(
                                     text: items[index],
-                                    size: 12,
+                                    size: 15,
+                                    textColor: blanc,
                                   ),
                                 ],
                               ),
